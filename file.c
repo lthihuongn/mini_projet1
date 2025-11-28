@@ -8,10 +8,10 @@ void ecrire_fichier(const char* nom_fichier, Pixmap* p) {
         }
 
         // Écrire l'en-tête PPM
-        fprintf(f, "P6\n%s %s\n255\n", p->largeur, p->hauteur);
+        fprintf(f, "P6\n%d %d\n255\n", p->largeur, p->hauteur);
 
         // Écrire les pixels en binaire
-        fwrite(p->pixel, sizeof(Pixel), p->largeur[5] * p->hauteur[5], f);
+        fwrite(p->pixel, sizeof(Pixel), p->largeur * p->hauteur, f);
 
         fclose(f);
 }
@@ -20,5 +20,5 @@ void supprimer_fichier(const char* nom_fichier){
 
 }
 void lire_fichier(const char* nom_fichier, Pixmap* p){
-    
+
 }

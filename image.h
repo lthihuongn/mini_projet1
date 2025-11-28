@@ -14,12 +14,10 @@ typedef struct {
 } Pixel;
 
 typedef struct {
-    char signature [3];
-    char largeur [5];
-    char hauteur [5];
-    char intensite [5];
+    int largeur;
+    int hauteur;
     Pixel *pixel;
-} Pixmap;  // lit le RGB de ton pixel
+} Pixmap;
 
 void creer_pixmap(Pixmap *p, int largeur, int hauteur);
 void supprimer_pixmap(Pixmap *p);
