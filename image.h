@@ -1,3 +1,6 @@
+#ifndef IMAGE_H
+#define IMAGE_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,3 +31,4 @@ void afficher_pixel(Pixel *px);
 void saisir_pixel(Pixel *px);
 void suppimer_pixel(Pixel *px);
 
+#endif
