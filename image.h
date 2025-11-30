@@ -19,7 +19,8 @@ typedef struct {
     Pixel *pixel;
 } Pixmap;
 
-void creer_pixmap(Pixmap *p, int largeur, int hauteur);
+void creer_pixmap_carre(Pixmap *p, int largeur, int hauteur);
+void creer_pixmap_disque(Pixmap *p, int largeur, int hauteur, int diametre);
 void supprimer_pixmap(Pixmap *p);
 void saisir_pixmap(Pixmap *p);
 void afficher_pixmap(Pixmap *p);

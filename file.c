@@ -17,7 +17,9 @@ void ecrire_fichier(const char* nom_fichier, Pixmap* p) {
 }
 
 void supprimer_fichier(const char* nom_fichier){
-
+    if (remove(nom_fichier) != 0) {
+        perror("Erreur suppression fichier");
+    }
 }
 void lire_fichier(const char* nom_fichier, Pixmap* p){
 

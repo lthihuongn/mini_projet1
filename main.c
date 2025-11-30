@@ -5,8 +5,9 @@
 
 int main(int argc, char const *argv[]){
     Pixmap p;
-    creer_pixmap(&p, 10, 10);
+    creer_pixmap_disque(&p, 600, 400, 200);
     ecrire_fichier("image.ppm", &p);
+    supprimer_pixmap(&p);
     
     return 0;
 }
