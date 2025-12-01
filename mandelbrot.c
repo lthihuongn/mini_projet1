@@ -69,7 +69,7 @@ void creer_pixmap_mandelbrot(Pixmap *p){
             //si ce point converge
             int c = convergence(x, y);
             
-            //placer me pixel dans le tableau
+            //placer pixel dans le tableau
             int index = calculer_index(px, py, MANDELBROT_LARGEUR);
             
             //couleur du pixel
@@ -101,7 +101,6 @@ void creer_pixmap_mandelbrot_zoom(Pixmap *p, double x1, double y1, double x2, do
     }
 }
 
-// Créer une série d'images avec effet de zoom sur un point
 void creer_serie_zoom_mandelbrot(int nb_images, double x_target, double y_target){
     Pixmap p;
     
@@ -112,25 +111,25 @@ void creer_serie_zoom_mandelbrot(int nb_images, double x_target, double y_target
     
     
     for(int i = 0; i < nb_images; i++){
-        // Calculer le facteur de zoom (progression linéaire)
-        double t = (double)i / (nb_images - 1);  // de 0 à 1
+        //facteur de zoom
+        double t = (double)i / (nb_images - 1);  //de 0 a 1
         
-        // Calculer la taille de la fenêtre (diminue avec le zoom)
+        //taille de la fenetre
         double largeur_init = x2_init - x1_init;
         double hauteur_init = y1_init - y2_init;
         
-        // Réduire la fenêtre progressivement (facteur de 100)
-        double facteur_zoom = 1.0 - t * 0.99;  // de 1.0 à 0.01
+        //fenetre reduite progressivement
+        double facteur_zoom = 1.0 - t * 0.99;
         double largeur = largeur_init * facteur_zoom;
         double hauteur = hauteur_init * facteur_zoom;
         
-        // Centrer la fenêtre sur le point cible
+        //fenetre cnetree sur le point cible
         double x1 = x_target - largeur / 2;
         double x2 = x_target + largeur / 2;
         double y1 = y_target + hauteur / 2;
         double y2 = y_target - hauteur / 2;
         
-        // Créer l'image
+        //creer l'image
         creer_pixmap_mandelbrot_zoom(&p, x1, y1, x2, y2);
         
         char nom_fichier[20];

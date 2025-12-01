@@ -7,7 +7,7 @@ void ecrire_fichier(const char* nom_fichier, Pixmap* p) {
             return;
         }
 
-        //en-tête PPM
+        //en-tete PPM
         fprintf(f, "P6\n%d %d\n255\n", p->largeur, p->hauteur);
 
         //pixels en binaire
