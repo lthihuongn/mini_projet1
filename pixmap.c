@@ -1,5 +1,4 @@
-#include "image.h"
-
+#include "pix.h"
 
 
 void creer_pixmap_carre(Pixmap *p, int largeur, int hauteur){
@@ -7,7 +6,7 @@ void creer_pixmap_carre(Pixmap *p, int largeur, int hauteur){
     p->hauteur = hauteur;
     p->pixel = (Pixel*)malloc(largeur * hauteur * sizeof(Pixel));
     for(int i = 0; i < largeur * hauteur; i++){
-        creer_pixel(&p->pixel[i], 255, 255, 0);
+        creer_pixel(&p->pixel[i], 255, 255, 0); // remplit mémoire de pixels jaunes
     }
 }
 

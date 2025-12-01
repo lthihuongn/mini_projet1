@@ -1,4 +1,4 @@
-#include "image.h"
+#include "pix.h"
 
 void creer_pixel(Pixel *px, unsigned char r, unsigned char g, unsigned char b) {
     px->r = r;
@@ -11,8 +11,6 @@ void afficher_pixel(Pixel *px) {
 }
 
 void saisir_pixel(Pixel *px) {
-    printf("Entrez les valeurs RGB du pixel (0-255) : ");
-    scanf("%hhu %hhu %hhu", &px->r, &px->g, &px->b);
 }
 
 void suppimer_pixel(Pixel *px) {
