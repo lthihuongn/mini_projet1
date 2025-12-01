@@ -15,27 +15,27 @@ void creer_pixmap_disque(Pixmap *p, int largeur, int hauteur, int diametre){
     p->hauteur = hauteur;
     p->pixel = (Pixel*)malloc(largeur * hauteur * sizeof(Pixel));
     
-    // Centre de l'image
+    //centre de l'image
     int centre_x = largeur / 2;
     int centre_y = hauteur / 2;
     int rayon = diametre / 2;
     
-    // Parcourir chaque pixel
+    //parcourt chaque pixel
     for(int y = 0; y < hauteur; y++){
         for(int x = 0; x < largeur; x++){
             int index = y * largeur + x;
             
-            // Calculer la distance au centre
+            //calculer la distance au centre
             int dx = x - centre_x;
             int dy = y - centre_y;
             int distance_carree = dx*dx + dy*dy;
             int rayon_carre = rayon * rayon;
             
-            // Si dans le disque: rouge, sinon: noir
+            //si dans disque: rouge sinon noir
             if(distance_carree <= rayon_carre){
-                creer_pixel(&p->pixel[index], 255, 0, 0); // Rouge
+                creer_pixel(&p->pixel[index], 255, 0, 0);
             } else {
-                creer_pixel(&p->pixel[index], 0, 0, 0); // Noir
+                creer_pixel(&p->pixel[index], 0, 0, 0);
             }
         }
     }
